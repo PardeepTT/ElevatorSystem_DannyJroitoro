@@ -1,4 +1,4 @@
-
+// intitialize elevators state
 const elevators = [
     { id: 1, currentFloor: 0, busy: false },
     { id: 2, currentFloor: 0, busy: false },
@@ -7,8 +7,10 @@ const elevators = [
     { id: 5, currentFloor: 0, busy: false },
 ];
 
+// initialize elevator queue
 const elevatorQueue = [];
 
+// add event listener to call buttons
 document.querySelectorAll('.call-button').forEach(button => {
     button.addEventListener('click', () => {
         // Prevent click if the button is already in 'waiting' or 'arrived' state
@@ -21,16 +23,18 @@ document.querySelectorAll('.call-button').forEach(button => {
     });
 });
 
+// handle call request for elevators
 function handleCallRequest(floor, button) {
     button.classList.add('waiting');
     button.innerText = 'Waiting';
     updateWaitingTime(floor); // Show waiting time immediately
-    elevatorQueue.push({ floor, button });
+    elevatorQueue.push({ floor, button }); // pushing requested fllor and call button to the queue
     processQueue(); // Process request immediately
 }
 
+// Find the nearest available elevator to calculate waiting time
 function updateWaitingTime(floor) {
-    // Find the nearest available elevator to calculate waiting time
+    
     const elevator = findNearestElevator(floor);
     const waitingTimeSpan = document.getElementById(`waiting-time-${floor}`);
 
@@ -41,6 +45,7 @@ function updateWaitingTime(floor) {
     }
 }
 
+// Process the queue of requests for elevators and find the nearest available elevator
 function processQueue() {
     if (elevatorQueue.length === 0) return;
 
@@ -54,6 +59,7 @@ function processQueue() {
     }
 }
 
+// find nearest available elevator logic to the requested floor
 function findNearestElevator(requestFloor) {
     return elevators.filter(e => !e.busy)
         .reduce((closest, elevator) => {
@@ -62,14 +68,18 @@ function findNearestElevator(requestFloor) {
         }, null);
 }
 
+// elevator images for different states
 const elevatorImages = {
     default: 'assets/elevator.svg',
     moving: 'assets/elevator-red.svg',
     arrived: 'assets/elevator-green.svg',
 };
 
+// elevator sound
 const elevatorSound = new Audio('assets/elevator-bell.wav');
 
+
+// move the elevator to the requested floor and update its state by calculating time and distance from current and target floor.
 function moveElevator(elevator, floor, button) {
     // Prevent unnecessary movement if already on the requested floor
     if (elevator.currentFloor === floor) {
@@ -105,6 +115,7 @@ function moveElevator(elevator, floor, button) {
     }, 1000);
 }
 
+// elevator reached floor and update its state and button state 
 function elevatorReachedFloor(elevator, button) {
     const elevatorElement = document.getElementById(`elevator${elevator.id}`);
     const elevatorImg = elevatorElement.querySelector('img');
@@ -118,9 +129,10 @@ function elevatorReachedFloor(elevator, button) {
 
     setTimeout(() => {
         resetElevator(elevator, button);
-    }, 2000);  // 2-second delay
+    }, 2000);  // 2-second delay before reseting the elevator state
 }
 
+// reset the elevator to it's default state
 function resetElevator(elevator, button) {
     const elevatorElement = document.getElementById(`elevator${elevator.id}`);
     const elevatorImg = elevatorElement.querySelector('img');

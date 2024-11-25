@@ -64,7 +64,6 @@ body {
 .elevator {
     width: 120px;
     height: 60px;
-    /* position: absolute; */
     bottom: 0;
     transition: transform 1s ease-in-out;
     text-align: center;

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevator System</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="building-container">
+        <div class="floors">
+            <!-- Floors with call buttons -->
+            <div class="elevator-outer">
+                <div class="floor-outer">
+                    <div class="floor-label">9th</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="9">Call</button>
+                        <span class="waiting-time" id="waiting-time-9"></span>
+                    </div>
+                </div>
+
+
+                <div class="floor-outer">
+                    <div class="floor-label">8th</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="8">Call</button>
+                        <span class="waiting-time" id="waiting-time-8"></span>
+                    </div>
+                </div>
+
+
+                <div class="floor-outer">
+                    <div class="floor-label">7th</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="7">Call</button>
+                        <span class="waiting-time" id="waiting-time-7"></span>
+                    </div>
+                </div>
+
+
+                <div class="floor-outer">
+                    <div class="floor-label">6th</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="6">Call</button>
+                        <span class="waiting-time" id="waiting-time-6"></span>
+                    </div>
+                </div>
+
+
+                <div class="floor-outer">
+                    <div class="floor-label">5th</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="5">Call</button>
+                        <span class="waiting-time" id="waiting-time-5"></span>
+                    </div>
+                </div>
+
+                <div class="floor-outer">
+                    <div class="floor-label">4th</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="4">Call</button>
+                        <span class="waiting-time" id="waiting-time-4"></span>
+                    </div>
+                </div>
+
+                <div class="floor-outer">
+                    <div class="floor-label">3rd</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="3">Call</button>
+                        <span class="waiting-time" id="waiting-time-3"></span>
+                    </div>
+                </div>
+
+                <div class="floor-outer">
+                    <div class="floor-label">2nd</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="2">Call</button>
+                        <span class="waiting-time" id="waiting-time-2"></span>
+                    </div>
+                </div>
+
+
+                <div class="floor-outer">
+                    <div class="floor-label">1st</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="1">Call</button>
+                        <span class="waiting-time" id="waiting-time-1"></span>
+                    </div>
+                </div>
+
+                <div class="floor-outer">
+                    <div class="floor-label">Ground</div>
+                    <div class="lift-boxes">
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                    <div class="floor-btn">
+                        <button class="call-button" data-floor="0" >Call</button>
+                        <span class="waiting-time" id="waiting-time-0"></span>
+                    </div>
+                </div>
+
+                <div class="elevator-shaft">
+                    <div class="elevator" id="elevator1">
+                        <img src="assets/elevator.svg" alt="Elevator 1">
+                    </div>
+                    <div class="elevator" id="elevator2">
+                        <img src="assets/elevator.svg" alt="Elevator 2">
+                    </div>
+                    <div class="elevator" id="elevator3">
+                        <img src="assets/elevator.svg" alt="Elevator 3">
+                    </div>
+                    <div class="elevator" id="elevator4">
+                        <img src="assets/elevator.svg" alt="Elevator 4">
+                    </div>
+                    <div class="elevator" id="elevator5">
+                        <img src="assets/elevator.svg" alt="Elevator 5">
+                    </div>
+        
+                </div>
+            </div>
+
+        </div>
+
+      
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

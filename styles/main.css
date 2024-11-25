@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.building-container {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.floors {
+    display: flex;
+    flex-direction: column-reverse;   
+}
+
+.floor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; 
+    border-bottom: 1px solid #ccc;
+}
+
+.floor-label {
+    margin-right: 0;
+    width: 80px;
+    text-align: right;
+    min-width: 80px;
+}
+
+.call-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.call-button.waiting {
+    background-color: red;
+}
+.call-button.arrived {
+    background-color: rgb(238, 227, 227);
+    border: 1px solid green;
+    color: green;
+    
+}
+
+.elevator-shaft {
+    position: absolute;
+    left: 95px;
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    bottom: 0;
+}
+.elevator {
+    width: 120px;
+    height: 60px;
+    /* position: absolute; */
+    bottom: 0;
+    transition: transform 1s ease-in-out;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elevator img { 
+    height: 40px;
+    margin: auto;
+}
+.box{
+    width: 120px;
+    height: 60px;
+    background-color: #fff;
+    margin: 0 0px; 
+    box-shadow: 0px 0px 1px #8f8f8f; 
+}
+.floor-outer {
+    width: 100%;
+    display: flex;
+    background-color: #eee;
+    align-items: center; 
+    gap: 15px;
+}
+.lift-boxes {
+    display: flex;
+}
+ 
+.elevator-outer
+{
+    margin: 0px 0 0;
+    position: relative;
+}
+ 
+.waiting-time {
+    font-size: 12px;
+    color: gray;
+    margin-left: 10px;
+}
